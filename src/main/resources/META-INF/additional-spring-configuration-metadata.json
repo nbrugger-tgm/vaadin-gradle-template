@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "vaadin.pnpm.enable",
+      "type": "java.lang.String",
+      "description": "Description for vaadin.pnpm.enable."
+    },
+    {
+      "name": "niton.cloud.admin",
+      "type": "java.lang.String",
+      "description": "Name of the default admin user."
+    }
+  ]
+}

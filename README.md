@@ -1,27 +1,41 @@
-# NitonCloud
+# Template
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This projects provides an extended base of the Vaadin 21 starter project.
+
+- Uses Gradle not maven
+- Adds customizable authorization
+- Better docker support
 
 ## Running the application
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
+The project is a standard Gradle project. To run it from the command line,
+`./gradlew run` (Mac & Linux), then open
 http://localhost:8080 in your browser.
 
 You can also import the project to your IDE of choice as you would with any
-Maven project. Read more on [how to set up a development environment for
-Vaadin projects](https://vaadin.com/docs/latest/guide/install) (Windows, Linux, macOS).
+Gradle project. 
 
 ## Deploying to Production
 
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
+To create a production build, call `./gradlew assembleDist`
+This will build a Tar and Zip file with all the dependencies and front-end resources,
+ready to be deployed. The file can be found in the `build/distributions` folder after the build completes.
 
-Once the JAR file is built, you can run it using
-`java -jar target/nitoncloud-1.0-SNAPSHOT.jar`
+This tar/zip contains your complete packaged application.
+The archives can be used for distribution with package managers or for installer creators.
+
+Within the archives there is a `bin` folder which contains a windows and linux start script.
+The command to start your app is as follows
+
+(Linux)
+```shell
+./<applicationlocation>/bin/<appname>
+```
+
+(Windows)
+```shell
+C:\<applicationlocation>\bin\<appname>.bat
+```
 
 ## Project structure
 
